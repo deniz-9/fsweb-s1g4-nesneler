@@ -23,7 +23,7 @@ function MenuElemaniOlustur(isim,fiyat,kategori) {
 	};
 	/*Kodlar buraya*/
 }
-
+ 
 
 
 /*  Görev 1b (otomatik test yok): 
@@ -35,6 +35,8 @@ function MenuElemaniOlustur(isim,fiyat,kategori) {
 	
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
+      MenuElemaniOlustur ('Hamburger', 30, "Burgerler" );
+	  console.log ("Hamburger", 30,"Burgerler");
 
 
 
@@ -54,10 +56,12 @@ function MenuElemaniOlustur(isim,fiyat,kategori) {
 const burger = {
 	isim: "Burger", 
 	fiyat: 18, 
-	kategori: "Öğle Yemeği", 
-
+	kategori: "Öğle Yemeği",
+	indirim: function(indirimMüşteri)
+	{
+		return(indirimMüşteri === "öğretmen") || (indirimMüşteri === "öğrenci") ? this.fiyat *0.75 : this.fiyat * 0.9;
+	}
 }
-
 
 
 ///////////////Değerlendirmeler (MVP)///////////////////
@@ -77,14 +81,16 @@ const degerlendirmeler = [
 	1. Sadece Ahmet'in geribildirimini konsolda görüntüleyin - fonksiyona gerek yok
 */
 
-
+ console.log(degerlendirmeler.findIndex (x => x.isim === "Ahmet"));
 
 /*  Görev 4 (ototest yok):  
 	Reyna'nın geribildirimi girilmemiş! Aşağıdakileri uygulayın: (fonksiyona gerek yok) 
 	1. Bu geribildirimi Reyna'nın değerlendirmesine ekleyin - "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım"
 	2. degerlendirmeler dizisini konsolda görüntüleyerek çalışmanızı kontrol edin
 */
-
+console.log(degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Ahmet")]);
+degerlendirmeler[degerlendirmeler.findIndex(x => x.isim === "Reyna")].geribildirim = "bu mekan bir harika dostum, yine de garsonun gülümsememesinden puan kırdım";
+console.log(degerlendirmeler)
 
 
 /*  Görev 5: 
@@ -99,7 +105,7 @@ const degerlendirmeler = [
 */
 
 
-function DegerledirmeEkle(/*Kodlar buraya */){
+function DegerledirmeEkle(değerlendirmeDizi,müsteriAd,musteriPuan){
 	/*Kodlar buraya */
 	
 }
@@ -117,7 +123,8 @@ function DegerledirmeEkle(/*Kodlar buraya */){
 */
 
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
+function AnahtardanDegerlendirmeAl(değerlendirmeDizi,diziElemanArrayIndex) {
+	const müsteriAd = değerlendirmeDizi.diziElemanArrayIndex.isim
 	/*Kodlar buraya*/
 
 }
@@ -137,10 +144,14 @@ function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
 */
 
 
-function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
+function SonDegerlendirmeyiAl(değerlendirmeDizi) {
+	const sonmüsteriAd = değerlendirmeDizi [değerlendirmeDizi.length - 1].isim;
+	const sonmüsteriPuan = değerlendirmeDizi[değerlendirmeDizi.length-1].puan;
+	const sonmüsteriInfo = değerlendirmeDizi[değerlendirmeDizi.length- 1].geribildirim;
+	return sonmüsteriAd + " adlı Kişi" +sonmüsteriPuan + " puan verdi ve şunları yazdı: " + sonmüsteriInfo;
 	/*Kodlar buraya*/
 } 
-
+    
 
 
 /////////////// BONUS  GÖRVLER////////////////////
