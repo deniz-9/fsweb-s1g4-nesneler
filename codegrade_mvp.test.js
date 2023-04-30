@@ -3,7 +3,7 @@ const { burger } = require('./index.js');
 
 let degerlendirmeler;
 beforeEach(()=>{
-	degerlendirmeler = [
+	degerlendirmeler = [ 
 		{isim: "Nalan", puan: 5, geribildirim:"Mükemmel atmosfer ve mükemmel vegan seçenekleri!"},
 		{isim: "Kuddusi", puan: 3, geribildirim:"Benim zevkime göre biraz fazla yenilikçi, burger iyi ama fiyatı yüksek"},
 		{isim: "Kamuran", puan: 4, geribildirim:"eğlenceli bilgiler ve havalı hisler"},
